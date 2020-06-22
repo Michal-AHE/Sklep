@@ -1,0 +1,138 @@
+html, body 
+{
+    font-family: calibri;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#top-menu
+{
+    background-color: #555;
+    border: 2px solid #777;
+    padding: 10px;
+}
+
+#top-menu .menu_position
+{
+    color:#eee;
+    font-weight: bold;
+    display: inline-block;
+    padding:10px;
+}
+
+#top-menu .menu_position:hover
+{
+    background-color: #666;
+}
+
+#top-menu a
+{
+    color:#eee;
+    text-decoration: none;
+}
+#top-menu a:visited
+{
+    color:#eee;
+    text-decoration: none;
+}
+
+#loginContainer
+{
+    float: right;
+    position: relative;
+    right: 10px;
+}
+
+#cartAmount
+{
+    float: right;
+    position: relative;
+    margin-right: 50px;
+}
+#cartAmount p
+{
+    margin: 0px;
+}
+
+#top-menu, #content
+{
+    margin: 0px auto;
+    position: relative;
+    width: 95%;
+}
+
+ul
+{
+    color : #aaa;
+    padding: 0;
+}
+
+li
+{
+    display: inline;
+}
+
+.subcategory_li::before
+{
+    content: ">";
+    margin: 0 4px;
+}
+
+.cartControl
+{
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+#cartInfo
+{
+    background-color: #eee;
+    border: 1px solid #333;
+    border-radius: 10px;
+    height: 60%;
+    left:50%;
+    position: absolute;
+    text-align: center;
+    top:50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    z-index: 999;
+}
+
+#cartInfoBackground
+{
+    background-color: rgba(33,33,33,0.5);
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 998;
+}
+
+#cartInfoClose
+{
+    background-image: url('../gfx/close-button.png');
+    background-size: 20px 20px;
+    height: 20px;
+    position:absolute;
+    right: 10px;
+    top: 10px;
+    width:20px;
+}
+
+#cartInfoTable
+{
+    margin: 10px auto;
+}
+
+#cartInfoTable td
+{
+    padding: 10px 30px;
+}
+
+#cartInfoImage
+{
+    
+}
