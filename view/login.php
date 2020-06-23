@@ -42,9 +42,14 @@ class LoginView extends View
         $email = $_POST['email'];
         $password1 = $_POST['password1'];
         $password2 = $_POST['password2'];
+        $street = $_POST['street'];
+        $buildingNo = $_POST['buildingNo'];
+        $apartmentNo = $_POST['apartmentNo'];
+        $postalCode = $_POST['postalCode'];
+        $city = $_POST['city'];
         
         $art=$this->loadModel('login');
-        if ($art->registerUser($email, $firstName, $lastName, $password1, $password2))
+        if ($art->registerUser($email, $firstName, $lastName, $password1, $password2, $street, $buildingNo, $apartmentNo, $postalCode, $city))
         {
             header("Location: ?task=login&action=registerSuccess");
         }

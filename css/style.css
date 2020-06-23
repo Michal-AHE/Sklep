@@ -14,12 +14,84 @@ html, body
     padding: 10px;
 }
 
-#top-menu .menu_position
+@media only screen and (min-width: 601px)
 {
-    color:#eee;
-    font-weight: bold;
-    display: inline-block;
-    padding:10px;
+    #top-menu .menu_position
+    {
+        color:#eee;
+        font-weight: bold;
+        display: inline-block;
+        padding:10px;
+    }
+    
+    #loginContainer
+    {
+        float: right;
+        position: relative;
+        right: 10px;
+    }
+    
+    #cartAmount
+    {
+        float: right;
+        position: relative;
+        margin-right: 50px;
+    }
+    #cartInfo
+    {
+        background-color: #eee;
+        border: 1px solid #333;
+        border-radius: 10px;
+        height: 60%;
+        left:50%;
+        position: absolute;
+        text-align: center;
+        top:50%;
+        transform: translate(-50%,-50%);
+        width: 60%;
+        z-index: 999;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #top-menu .menu_position
+    {
+        color:#eee;
+        font-weight: bold;
+        padding:10px;
+    }
+    
+    #loginContainer
+    {
+        float: none;
+        position: relative;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+    
+    #cartAmount
+    {
+        position: relative;
+        padding: 2vh 0px;
+        margin-top: 2vh;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+    
+    #cartInfo
+    {
+        background-color: #eee;
+        border: 1px solid #333;
+        border-radius: 10px;
+        height: 60%;
+        left:50%;
+        position: absolute;
+        text-align: center;
+        top:50%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+        z-index: 999;
+    }
 }
 
 #top-menu .menu_position:hover
@@ -38,19 +110,8 @@ html, body
     text-decoration: none;
 }
 
-#loginContainer
-{
-    float: right;
-    position: relative;
-    right: 10px;
-}
 
-#cartAmount
-{
-    float: right;
-    position: relative;
-    margin-right: 50px;
-}
+
 #cartAmount p
 {
     margin: 0px;
@@ -134,5 +195,5 @@ li
 
 #cartInfoImage
 {
-    
+    max-width: 20vw;
 }

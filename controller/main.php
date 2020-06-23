@@ -12,5 +12,9 @@ class MainController extends Controller{
         $view=$this->loadView('main');
         $view->about();
     }
+    public function contact() {
+        $view=$this->loadView('main');
+        $view->contact();
+    }
 }
 ?>

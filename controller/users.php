@@ -14,5 +14,11 @@ class UsersController extends Controller{
         $view=$this->loadView('users');
         $view->orders();
     }
+    
+    public function order()
+    {
+        $view=$this->loadView('users');
+        $view->order();
+    }
 }
 ?>

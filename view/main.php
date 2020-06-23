@@ -9,6 +9,13 @@ class MainView extends View
         $this->set('mainStart', $art->getMainStart());
         $this->render('mainStart');
     }
+    
+    public function  contact() {
+        $art=$this->loadModel('main');
+        $this->set('content', $art->getMainContact());
+        $this->render('mainContact');
+    }
+    
     public function  about()
     {
         $this->set('userId', 'damian1');

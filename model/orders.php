@@ -34,7 +34,7 @@ class OrdersModel extends Model
     public function createOrdersStatus($orderId)
     {
         $date = $this->getCurrentDateTime();
-        $query = "INSERT INTO order_status (order_id, status, date) VALUES ('$orderId', '0', '$date')";
+        $query = "INSERT INTO order_status (order_id, status, date) VALUES ('$orderId', '1', '$date')";
         $stmt = $this->pdo->query($query);
     }
     
@@ -137,6 +137,7 @@ class OrdersModel extends Model
                 . " WHERE o.user_id = '$userId'"
                 . " GROUP BY o.order_id";
         $orders = $this->pdo->query($query, PDO::FETCH_ASSOC)->fetchAll();
+        
         return $orders;
     }
     

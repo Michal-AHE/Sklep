@@ -2,7 +2,8 @@
     <head>
         <title>Sklep medyczny</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="css/style.css?ver=1.2" rel="stylesheet" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -12,7 +13,7 @@
                 <h2>Dodano produkt do koszyka!</h2>
                 <table id="cartInfoTable">
                     <thead>
-                        <th></th>
+                        <th>Zdjęcie</th>
                         <th>Produkt</th>
                         <th>Ilość</th>
                         <th>Łączna cena</th>
@@ -34,12 +35,14 @@
             <div id="loginContainer">
                 <? echo (Session::get('userId') ? 'Witaj '.Session::get('userName').' (<a href=index.php?task=login&action=logout>Wygloguj</a>)' : '<a href="index.php?task=login&action=loginForm">Zaloguj</a><a style="margin-left:20px;" href="index.php?task=login&action=register">Zarejestruj się</a>'); ?>
             </div>
+            <?php if (Session::get('userId')) { ?>
             <div id='cartAmount'>
                 <p>Koszyk: <a href="?task=cart&action=cartSummary"><?=$this->get('totalCartAmount');?></a> produktów</p>
             </div>
+            <?php } ?>
             <div class="menu_position"><a href="?task=main&amp;action=start">Strona Główna</a></div>
             <div class="menu_position"><a href="?task=main&amp;action=about">O nas</a></div>
             <div class="menu_position"><a href="?task=products&amp;action=index">Sklep internetowy</a></div>
-            <div class="menu_position"><a href="?task=categories&amp;action=index">Kontakt</a></div>
+            <div class="menu_position"><a href="?task=main&amp;action=contact">Kontakt</a></div>
         </div>
         <div id="content">

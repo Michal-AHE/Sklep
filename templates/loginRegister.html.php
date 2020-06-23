@@ -12,6 +12,16 @@
 <input type="password" name="password1"/>
 <p>Powtórz hasło</p>
 <input type="password" name="password2"/>
+<p>Ulica</p>
+<input type="text" name="street"/>
+<p>Numer domu</p>
+<input type="text" name="buildingNo"/>
+<p>Numer lokalu</p>
+<input type="text" name="apartmentNo"/>
+<p>Kod pocztowy</p>
+<input type="text" name="postalCode"/>
+<p>Miasto</p>
+<input type="text" name="city"/>
 <input type="submit" value="Zarejestruj"/>
 </form>
 

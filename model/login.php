@@ -37,7 +37,7 @@ class LoginModel extends Model
         }
     }
     
-    public function registerUser($email, $firstName, $lastname, $password1, $password2)
+    public function registerUser($email, $firstName, $lastname, $password1, $password2, $street, $buildingNo, $apartmentNo, $postalCode, $city)
     {
         if ($password1!=$password2)
         {
@@ -51,8 +51,15 @@ class LoginModel extends Model
             }
             $password = sha1($password1);
             $currentDate = date("Y-m-d H:i:s");
-            $query="INSERT INTO users (first_name, last_name, email, password, joined) VALUES ('$firstName','$lastname','$email','$password','$currentDate')";
-            if ($this->pdo->query($query))
+            $queryUser="INSERT INTO users (first_name, last_name, email, password, joined) VALUES ('$firstName','$lastname','$email','$password','$currentDate')";
+            $stmtUser = $this->pdo->prepare($queryUser);
+            $userStatus = $stmtUser->execute();
+            $userId = $this->pdo->lastInsertId();
+            
+            $queryUserData="INSERT INTO users_data (user_id, street, building_no, apartment_no, postal_code, city)"
+                    . " VALUES ('$userId','$street','$buildingNo','$apartmentNo','$postalCode', '$city')";
+            $userDataStatus = $this->pdo->query($queryUserData);
+            if ($userStatus AND $userDataStatus)
             {
                 return TRUE;
             }

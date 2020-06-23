@@ -11,5 +11,15 @@ class UsersView extends View
         $this->set('orders', $orders);
         $this->render('usersOrders');
     }
+    
+    public function order()
+    {
+        $ordersModel = $this->loadModel('orders');
+        $this->set('orderId', $_GET['orderId']);
+        $order = $ordersModel->getOrderDetails($this->get('orderId'));
+        $this->set('details', $order);
+        //$this->set('orders', $orders);
+        $this->render('usersOrder');
+    }
 }
 ?>

@@ -13,11 +13,11 @@
     <tbody>
     <? foreach ($this->get('orders') as $order) { ?>
     <tr>
-        <td><?=$order['order_id'];?></td>
+        <td><a href="?task=users&action=order&orderId=<?=$order['order_id'];?>"><?=$order['order_id'];?></a></td>
         <td><?=$order['date'];?></td>
         <td><?=$order['total_amount'];?></td>
         <td><?=$order['total_price'];?></td>
-        <td><?=$order['status'];?></td>
+        <td><?=$order['status_name'];?></td>
     </tr>
     <? } ?>
     </tbody>
